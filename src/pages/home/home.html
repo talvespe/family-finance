@@ -1,18 +1,83 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content no-padding>
+    <div class="menu-left">
+        <ion-list>
+            <button ion-button icon-only clear item-start>
+                <ion-icon name="home" color="lightprimary" large></ion-icon>
+            </button>
 
-<ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+            <button ion-button icon-only clear item-start>
+                <ion-icon name="person-add" color="lightprimary" large></ion-icon>
+            </button>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+            <button ion-button icon-only clear item-start (click)="settings()">
+                <ion-icon name="settings" color="lightprimary" large></ion-icon>
+            </button>
+        </ion-list>
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <div class="main">
+        <ion-list>
+            <ion-item color="primary" no-lines>
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col text-end>
+                            <p ion-text color="lightprimary" class="text-month">SALDO MÊS ANTERIOR</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col text-end>
+                            <h2 ion-text color="success">R$ 500,00</h2>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item color="primary" no-lines>
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col text-end>
+                            <p ion-text color="lightprimary" class="text-month">CARTEIRA</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col text-end>
+                            <h2 ion-text color="success">R$ 1000,00</h2>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+
+            <ion-item color="primary" no-lines class="wallet">
+                <ion-grid no-padding>
+                    <ion-row>
+                        <ion-col text-end>
+                            <p ion-text color="lightprimary" class="text-month">SALDO</p>
+                        </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col text-end>
+                            <h2 ion-text color="success"> R$ 1500,00</h2>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-list>
+    </div>
+
+    <ion-fab center bottom>
+        <button ion-fab color="light">
+            <ion-icon name="logo-usd"></ion-icon>
+        </button>
+        <ion-fab-list side="left">
+            <button ion-fab color="danger">
+                <ion-icon name="remove"></ion-icon>
+            </button>
+        </ion-fab-list>
+
+        <ion-fab-list side="right">
+            <button ion-fab color="success">
+                <ion-icon name="add"></ion-icon>
+            </button>
+        </ion-fab-list>
+    </ion-fab>
 </ion-content>

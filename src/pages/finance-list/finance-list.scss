@@ -1,0 +1,10 @@
+page-finance-list {
+  ion-content{
+    background-color: color($colors, primary) !important;
+  }
+
+  .item-inner {
+    border-color: $darkborder;
+    padding: 10px;
+  }
+}
