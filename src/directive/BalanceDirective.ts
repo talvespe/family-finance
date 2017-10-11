@@ -1,4 +1,4 @@
-import {AfterViewInit, Directive, ElementRef} from "@angular/core";
+import {AfterViewInit, Directive, ElementRef, Renderer} from "@angular/core";
 
 @Directive({
     selector: '[balance]'
@@ -9,12 +9,15 @@ export class BalanceDirective implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        let value: number = +this.elRef.nativeElement.innerHTML;
-        console.log('Valor:' + value);
+        console.log(this.elRef.nativeElement.innerHTML);
+        let valueString = this.elRef.nativeElement.innerHTML.replace('R$', '').replace(',', '');
+        let value: number = +(valueString / 100).toFixed(2);
         if (value < 0) {
-            this.elRef.nativeElement.style.color = '#d9534f';
+            this.elRef.nativeElement.className = 'danger'
+        } else if (value > 0) {
+            this.elRef.nativeElement.className = 'success'
         } else {
-            this.elRef.nativeElement.style.color = '#5cb85c';
+            this.elRef.nativeElement.className = 'info'
         }
     }
 }

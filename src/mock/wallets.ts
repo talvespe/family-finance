@@ -1,7 +1,7 @@
 export let WALLETS = [
     {
-        'mes': 5,
-        'ano': 2016,
+        'month': 5,
+        'year': 2016,
         'entries': [
             {
                 'value': 1500.80,
@@ -36,8 +36,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 6,
-        'ano': 2016,
+        'month': 6,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -62,8 +62,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 7,
-        'ano': 2016,
+        'month': 7,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -88,8 +88,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 8,
-        'ano': 2016,
+        'month': 8,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -113,34 +113,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 9,
-        'ano': 2016,
-        'entries': [
-            {
-                'value': 10,
-                'name': 'Bolacha',
-                'plus': false,
-                'category': {
-                    'name': 'Casa',
-                    'description': 'Compras efetuadas relacionadas a casa',
-                    'icon': 'home'
-                }
-            },
-            {
-                'value': 65.50,
-                'name': 'Gás',
-                'plus': false,
-                'category': {
-                    'name': 'Casa',
-                    'description': 'Compras efetuadas relacionadas a casa',
-                    'icon': 'home'
-                }
-            }
-        ]
-    },
-    {
-        'mes': 10,
-        'ano': 2016,
+        'month': 9,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -165,8 +139,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 11,
-        'ano': 2016,
+        'month': 10,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -191,8 +165,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 12,
-        'ano': 2016,
+        'month': 11,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -217,8 +191,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 1,
-        'ano': 2017,
+        'month': 12,
+        'year': 2016,
         'entries': [
             {
                 'value': 10,
@@ -243,8 +217,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 2,
-        'ano': 2017,
+        'month': 1,
+        'year': 2017,
         'entries': [
             {
                 'value': 10,
@@ -269,8 +243,34 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 3,
-        'ano': 2017,
+        'month': 2,
+        'year': 2017,
+        'entries': [
+            {
+                'value': 10,
+                'name': 'Bolacha',
+                'plus': false,
+                'category': {
+                    'name': 'Casa',
+                    'description': 'Compras efetuadas relacionadas a casa',
+                    'icon': 'home'
+                }
+            },
+            {
+                'value': 65.50,
+                'name': 'Gás',
+                'plus': false,
+                'category': {
+                    'name': 'Casa',
+                    'description': 'Compras efetuadas relacionadas a casa',
+                    'icon': 'home'
+                }
+            }
+        ]
+    },
+    {
+        'month': 3,
+        'year': 2017,
         'entries': [
             {
                 'value': 10,
@@ -295,8 +295,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 4,
-        'ano': 2017,
+        'month': 4,
+        'year': 2017,
         'entries': [
             {
                 'value': 5.80,
@@ -321,8 +321,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 5,
-        'ano': 2017,
+        'month': 5,
+        'year': 2017,
         'entries': [
             {
                 'value': 10,
@@ -347,8 +347,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 6,
-        'ano': 2017,
+        'month': 6,
+        'year': 2017,
         'entries': [
             {
                 'value': 10,
@@ -373,8 +373,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 7,
-        'ano': 2017,
+        'month': 7,
+        'year': 2017,
         'entries': [
             {
                 'value': 2,
@@ -399,8 +399,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 8,
-        'ano': 2017,
+        'month': 8,
+        'year': 2017,
         'entries': [
             {
                 'value': 20,
@@ -425,8 +425,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 9,
-        'ano': 2017,
+        'month': 9,
+        'year': 2017,
         'entries': [
             {
                 'value': 10,
@@ -451,9 +451,19 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 10,
-        'ano': 2017,
+        'month': 10,
+        'year': 2017,
         'entries': [
+            {
+                'value': 1000,
+                'name': 'Salário',
+                'plus': true,
+                'category': {
+                    'name': 'Ganhos',
+                    'description': 'Ganhos relacionados',
+                    'icon': 'home'
+                }
+            },
             {
                 'value': 9,
                 'name': 'Bolacha',
@@ -477,8 +487,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 11,
-        'ano': 2017,
+        'month': 11,
+        'year': 2017,
         'entries': [
             {
                 'value': 5,
@@ -503,8 +513,8 @@ export let WALLETS = [
         ]
     },
     {
-        'mes': 12,
-        'ano': 2017,
+        'month': 12,
+        'year': 2017,
         'entries': [
             {
                 'value': 8,

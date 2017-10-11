@@ -26,7 +26,7 @@
                     </ion-row>
                     <ion-row>
                         <ion-col text-end>
-                            <h2 ion-text color="success">R$ 500,00</h2>
+                            <h2 ion-text *ngIf="currentWallet != null"  balance>{{processLastBalance() | currencyFormat}}</h2>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -41,7 +41,7 @@
                     </ion-row>
                     <ion-row>
                         <ion-col text-end>
-                            <h2 ion-text color="success">R$ 1000,00</h2>
+                            <h2 ion-text *ngIf="currentWallet != null" balance>{{currentWallet | walletBalance | currencyFormat}}</h2>
                         </ion-col>
                     </ion-row>
                 </ion-grid>
@@ -51,12 +51,12 @@
                 <ion-grid no-padding>
                     <ion-row>
                         <ion-col text-end>
-                            <p ion-text color="lightprimary" class="text-month">SALDO</p>
+                            <p ion-text color="lightprimary" class="text-month" >SALDO</p>
                         </ion-col>
                     </ion-row>
                     <ion-row>
                         <ion-col text-end>
-                            <h2 ion-text color="success"> R$ 1500,00</h2>
+                            <h2 ion-text *ngIf="currentWallet != null" balance>{{processCurrentBalance() | currencyFormat}}</h2>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

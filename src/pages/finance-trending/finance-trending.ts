@@ -15,21 +15,41 @@ export class FinanceTrending {
     wallets: Array<any> = WALLETS;
 
     constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+        this.wallets.sort((wallet1, wallet2) => {
+            if(wallet1.year < wallet2.year){
+                return 1;
+            }
+
+            if(wallet1.year == wallet2.year && wallet1.month < wallet2.month ){
+                return 1;
+            }
+
+            if(wallet1.year > wallet2.year){
+                return -1;
+            }
+
+            if(wallet1.year == wallet2.year && wallet1.month > wallet2.month ){
+                return -1;
+            }
+
+            return 0;
+        });
+
     }
 
     getMonth(month: number) {
         return MonthEnum[month];
     }
 
-    proccessBallance(wallet: Wallet) {
-        return WalletUtil.getBallance(wallet, this.wallets);
+    proccessBalance(wallet: Wallet) {
+        return WalletUtil.getBalance(wallet, this.wallets);
     }
 
     walletDetail() {
         const walletDetailModal = this.modalCtrl.create("WalletDetail");
         let ww: Wallet = {
-            ano: 205,
-            mes: 5,
+            year: 205,
+            month: 5,
             entries: new Array()
         };
         walletDetailModal.present();
