@@ -29,3 +29,8 @@
 .font-100 {
   font-weight: 100;
 }
+
+::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
+}

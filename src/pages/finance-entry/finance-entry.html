@@ -1,19 +1,63 @@
+<ion-header>
+    <ion-navbar [color]="plus ? 'success' : 'danger'">
+        <ion-title>{{plus ? "Crédito" : "Débito" }}</ion-title>
+        <ion-buttons start>
+            <button ion-button icon-only navPop>
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
 <ion-content no-padding>
     <ion-list>
+        <ion-item class="valor" [color]="plus ? 'success' : 'danger'">
+            <ion-input type="number" item-end color="light" placeholder="00.00" text-right></ion-input>
+        </ion-item>
+
         <ion-item>
-            <ion-label floating>Nome</ion-label>
+            <ion-label static>Nome</ion-label>
             <ion-input type="text"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-label>Categoria</ion-label>
+            <ion-select [(ngModel)]="category">
+                <ion-option value="ca">Casa</ion-option>
+                <ion-option value="lz">Lazer</ion-option>
+                <ion-option value="tr">Transporte</ion-option>
+                <ion-option value="ou">Outros</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item *ngIf="!parcelado">
+            <ion-label>Fixo</ion-label>
+            <ion-toggle [(ngModel)]="fixo" checked="false"></ion-toggle>
+        </ion-item>
+
+        <ion-item *ngIf="!parcelado && fixo">
+            <ion-label static>Dia do mês</ion-label>
+            <ion-input type="number" item-end></ion-input>
+        </ion-item>
+
+        <ion-item *ngIf="!fixo">
+            <ion-label>Parcelado</ion-label>
+            <ion-toggle [(ngModel)]="parcelado" checked="false"></ion-toggle>
+        </ion-item>
+
+        <ion-item *ngIf="parcelado && !fixo">
+            <ion-label static>Parcelas</ion-label>
+            <ion-input type="number" item-end></ion-input>
+        </ion-item>
+
+        <ion-item  *ngIf="!fixo">
+            <ion-label>Data</ion-label>
+            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
         </ion-item>
     </ion-list>
 
-    <ion-fab rigth bottom>
+    <ion-fab right bottom>
         <button ion-fab color="light" (click)="save()">
-            <ion-icon name="logo-usd"></ion-icon>
+            <ion-icon name="checkmark"></ion-icon>
         </button>
     </ion-fab>
 </ion-content>

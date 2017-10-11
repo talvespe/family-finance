@@ -1,5 +1,26 @@
 page-finance-entry {
-  ion-content{
-    background-color: color($colors, primary) !important;
+
+  .valor .item-inner {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 5rem;
+    font-weight: 100;
+    margin: 10px;
+
+    *::-webkit-input-placeholder {
+      color: color($colors, light);
+    }
+    *:-moz-placeholder {
+      /* FF 4-18 */
+      color: color($colors, light);
+    }
+    *::-moz-placeholder {
+      /* FF 19+ */
+      color: color($colors, light);
+    }
+    *:-ms-input-placeholder {
+      /* IE 10+ */
+      color: color($colors, light);
+    }
   }
 }

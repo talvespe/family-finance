@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {App, IonicPage, ModalController, NavController} from 'ionic-angular';
+import {Component, ViewChild} from '@angular/core';
+import {App, FabContainer, IonicPage, ModalController, NavController} from 'ionic-angular';
 import {WALLETS} from "../../mock/wallets";
 import {Wallet} from "../../model/wallet";
 import {WalletUtil} from "../../util/wallet-util";
@@ -11,6 +11,8 @@ import {WalletUtil} from "../../util/wallet-util";
 })
 export class Home {
 
+    @ViewChild('fabContainer')
+    fabContainer: FabContainer;
 
     wallets: Array<any> = WALLETS;
     currentWallet: Wallet;
@@ -39,6 +41,8 @@ export class Home {
     }
 
     entry(plus:boolean) {
+        this.fabContainer.close();
+
         const entryModal = this.modalCtrl.create("FinanceEntry",{
             plus: plus
         });
