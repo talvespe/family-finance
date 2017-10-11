@@ -10,11 +10,7 @@ export class WalletBalancePipe implements PipeTransform {
         let total: number = 0
 
         for (let entry of value.entries) {
-            if (entry.plus) {
-                total = total + entry.value;
-            }else{
-                total = total - entry.value;
-            }
+            total = total + entry.value;
         }
 
         return total;

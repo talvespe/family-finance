@@ -1,21 +1,21 @@
 import {Component} from '@angular/core';
 import {App, IonicPage, NavController} from 'ionic-angular';
+import {Wallet} from "../../model/wallet";
+import {WalletUtil} from "../../util/wallet-util";
+import {WALLETS} from "../../mock/wallets";
 
 @IonicPage()
 @Component({
-  selector: 'page-finance-list',
-  templateUrl: 'finance-list.html'
+    selector: 'page-finance-list',
+    templateUrl: 'finance-list.html'
 })
 export class FinanceList {
 
-  constructor(public navCtrl: NavController, public app: App) {
 
-  }
+    wallets: Array<any> = WALLETS;
+    currentWallet: Wallet;
 
-  logout(){
-    //Api Token Logout 
-    const root = this.app.getRootNav();
-    root.popToRoot();
-  }
-
+    constructor(public navCtrl: NavController, public app: App) {
+        this.currentWallet = WalletUtil.getCurrentWallet(this.wallets);
+    }
 }

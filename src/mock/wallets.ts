@@ -6,7 +6,6 @@ export let WALLETS = [
             {
                 'value': 1500.80,
                 'name': 'Salário',
-                'plus': true,
                 'category': {
                     'name': 'Ganhos',
                     'description': 'Ganhos relacionados',
@@ -14,9 +13,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -24,9 +22,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -40,9 +37,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -50,9 +46,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -66,9 +61,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -76,9 +70,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -92,9 +85,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -102,7 +94,7 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
                 'category': {
                     'name': 'Casa',
@@ -117,9 +109,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -127,9 +118,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -143,9 +133,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -153,9 +142,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -169,9 +157,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -179,9 +166,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -195,9 +181,8 @@ export let WALLETS = [
         'year': 2016,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -205,9 +190,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -221,9 +205,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -231,9 +214,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -247,9 +229,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -257,9 +238,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -273,9 +253,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -283,11 +262,10 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
                 'category': {
                     'name': 'Casa',
-                    'plus': false,
                     'description': 'Compras efetuadas relacionadas a casa',
                     'icon': 'home'
                 }
@@ -299,9 +277,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 5.80,
+                'value': -5.80,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -309,9 +286,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 95.50,
+                'value': -95.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -325,9 +301,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -335,9 +310,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -351,9 +325,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -361,9 +334,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -377,9 +349,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 2,
+                'value': -2,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -387,9 +358,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 45.50,
+                'value': -45.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -403,9 +373,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 20,
+                'value': -20,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -413,9 +382,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 65.50,
+                'value': -65.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -429,9 +397,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 10,
+                'value': -10,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -439,9 +406,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 45.80,
+                'value': -45.80,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -457,7 +423,6 @@ export let WALLETS = [
             {
                 'value': 1000,
                 'name': 'Salário',
-                'plus': true,
                 'category': {
                     'name': 'Ganhos',
                     'description': 'Ganhos relacionados',
@@ -465,9 +430,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 9,
+                'value': -9,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -475,9 +439,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 95.50,
+                'value': -95.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -491,9 +454,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 5,
+                'value': -5,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -501,9 +463,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 55.50,
+                'value': -55.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -517,9 +478,8 @@ export let WALLETS = [
         'year': 2017,
         'entries': [
             {
-                'value': 8,
+                'value': -8,
                 'name': 'Bolacha',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
@@ -527,9 +487,8 @@ export let WALLETS = [
                 }
             },
             {
-                'value': 75.50,
+                'value': -75.50,
                 'name': 'Gás',
-                'plus': false,
                 'category': {
                     'name': 'Casa',
                     'description': 'Compras efetuadas relacionadas a casa',
