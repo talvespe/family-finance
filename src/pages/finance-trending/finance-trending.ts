@@ -3,6 +3,7 @@ import {IonicPage, ModalController, NavController} from 'ionic-angular';
 import {Wallet} from "../../model/wallet";
 import {WALLETS} from "../../mock/wallets";
 import {MonthEnum} from "../../model/month-enum";
+import {WalletUtil} from "../../util/wallet-util";
 
 @IonicPage()
 @Component({
@@ -20,42 +21,8 @@ export class FinanceTrending {
         return MonthEnum[month];
     }
 
-    getBallance(wallet: Wallet) {
-        let total: number = this.getWalletBalance(wallet);
-        let lastWallet: Wallet = this.wallets.filter((walletFilter) => {
-            let mesAnterior: number;
-            let anoAnterior: number;
-            if (wallet.mes == 1) {
-                mesAnterior = 12;
-                anoAnterior = wallet.ano - 1;
-            } else {
-                mesAnterior = wallet.mes - 1;
-                anoAnterior = wallet.ano;
-            }
-            return walletFilter.ano == anoAnterior && walletFilter.mes == mesAnterior;
-        })[0];
-
-        if (lastWallet != null) {
-            total = total + this.getBallance(lastWallet);
-            console.log(wallet.ano + " - " + wallet.mes + "=" + total);
-        }
-
-        return total;
-    }
-
-
-    getWalletBalance(wallet: Wallet) {
-        let total: number = 0;
-
-        for (let entry of wallet.entries) {
-            if (entry.plus) {
-                total = total + entry.value;
-            } else {
-                total = total - entry.value;
-            }
-        }
-
-        return total;
+    proccessBallance(wallet: Wallet) {
+        return WalletUtil.getBallance(wallet, this.wallets);
     }
 
     walletDetail() {
