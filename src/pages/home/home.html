@@ -69,13 +69,13 @@
             <ion-icon name="logo-usd"></ion-icon>
         </button>
         <ion-fab-list side="left">
-            <button ion-fab color="danger">
+            <button ion-fab color="danger" (click)="entry(false)">
                 <ion-icon name="remove"></ion-icon>
             </button>
         </ion-fab-list>
 
         <ion-fab-list side="right">
-            <button ion-fab color="success">
+            <button ion-fab color="success" (click)="entry(true)">
                 <ion-icon name="add"></ion-icon>
             </button>
         </ion-fab-list>

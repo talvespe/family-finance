@@ -426,7 +426,7 @@ export let WALLETS = [
                 'category': {
                     'name': 'Ganhos',
                     'description': 'Ganhos relacionados',
-                    'icon': 'home'
+                    'icon': 'add-circle'
                 }
             },
             {

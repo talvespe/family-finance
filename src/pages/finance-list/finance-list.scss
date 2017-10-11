@@ -5,6 +5,11 @@ page-finance-list {
 
   .item-inner {
     border-color: $darkborder;
-    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    p,h2 {
+      margin: 0 !important;
+    }
   }
 }

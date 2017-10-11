@@ -18,4 +18,10 @@ export class FinanceList {
     constructor(public navCtrl: NavController, public app: App) {
         this.currentWallet = WalletUtil.getCurrentWallet(this.wallets);
     }
+
+    processCurrentBalance() {
+        if (this.currentWallet != null) {
+            return WalletUtil.getBalance(this.currentWallet, this.wallets);
+        }
+    }
 }

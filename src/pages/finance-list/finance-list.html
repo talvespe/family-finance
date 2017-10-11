@@ -1,8 +1,47 @@
 <ion-content no-padding>
-    <ion-list *ngIf="currentWallet != null">
+    <ion-list *ngIf="currentWallet != null"  no-padding>
         <ion-item color="primary" no-padding *ngFor="let entry of currentWallet.entries">
-            <p ion-text class="text-month">{{entry.name}}</p>
-            <h2 ion-text item-end balance>{{entry.value | currencyFormat }}</h2>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col col-1 text-center>
+                        <ion-icon [name]="entry.category.icon"> </ion-icon>
+                    </ion-col>
+
+                    <ion-col col-7 text-left>
+                        <p ion-text class="font-100">{{entry.name}}</p>
+                    </ion-col>
+
+                    <ion-col col-4 text-right>
+                        <h2 ion-text item-end balance>{{entry.value | currencyFormat }}</h2>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+
         </ion-item>
     </ion-list>
+
+    <ion-footer color="primary">
+        <ion-toolbar>
+            <ion-grid no-padding>
+                <ion-row>
+                    <ion-col text-right>
+                        <span ion-text color="lightprimary" class="font-100" >CARTEIRA: </span>
+                    </ion-col>
+
+                    <ion-col text-right col-5>
+                        <span ion-text *ngIf="currentWallet != null" balance>{{currentWallet | walletBalance | currencyFormat}}</span>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col text-right>
+                        <span ion-text color="lightprimary" class="font-100" >SALDO: </span>
+                    </ion-col>
+
+                    <ion-col text-right col-5>
+                        <span ion-text *ngIf="currentWallet != null" balance>{{processCurrentBalance() | currencyFormat}}</span>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-toolbar>
+    </ion-footer>
 </ion-content>

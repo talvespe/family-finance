@@ -37,4 +37,13 @@ export class Home {
             return WalletUtil.getBalance(this.lastWallet, this.wallets);
         }
     }
+
+    entry(plus:boolean) {
+        const entryModal = this.modalCtrl.create("FinanceEntry",{
+            plus: plus
+        });
+
+        entryModal.present();
+    }
+
 }
