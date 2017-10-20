@@ -25,7 +25,7 @@ export class Home {
 
     settings() {
         const settingsModal = this.modalCtrl.create("Settings");
-        settingsModal.present()
+        settingsModal.present();
     }
 
     processCurrentBalance() {
@@ -40,10 +40,10 @@ export class Home {
         }
     }
 
-    entry(plus:boolean) {
+    entry(plus: boolean) {
         this.fabContainer.close();
 
-        const entryModal = this.modalCtrl.create("FinanceEntry",{
+        const entryModal = this.modalCtrl.create("FinanceEntry", {
             plus: plus
         });
 

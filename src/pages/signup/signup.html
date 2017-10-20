@@ -1,26 +1,20 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-            <ion-label fixed>Name</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-label fixed>Nome</ion-label>
+            <ion-input [(ngModel)]="user.name" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label fixed>Email</ion-label>
-            <ion-input type="text" value=""></ion-input>
-        </ion-item>
-
-        <ion-item>
-            <ion-label fixed>Username</ion-label>
-            <ion-input type="text" value=""></ion-input>
+            <ion-label fixed>E-mail</ion-label>
+            <ion-input [(ngModel)]="user.email" type="text"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label fixed>Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input [(ngModel)]="user.password" type="password"></ion-input>
         </ion-item>
 
-        <button ion-button block color="primary" (click)="signup()">Signup</button>
-
+        <button ion-button block color="primary" (click)="signup()">Cadastrar-se</button>
     </ion-list>
 </ion-content>

@@ -9,9 +9,9 @@ export class WalletBalancePipe implements PipeTransform {
     transform(value: Wallet, type: string): number {
         let total: number = 0
 
-        for (let entry of value.entries) {
-            total = total + entry.value;
-        }
+        // for (let entry of value.entries) {
+        //     total = total + entry.value;
+        // }
 
         return total;
     }

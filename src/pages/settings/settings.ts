@@ -1,5 +1,6 @@
 import {Component} from "@angular/core";
-import {IonicPage, NavController, ViewController} from "ionic-angular";
+import {Events, IonicPage, ViewController} from "ionic-angular";
+import {CommonConstants} from "../../constants/CommonConstants";
 
 @IonicPage()
 @Component({
@@ -8,16 +9,12 @@ import {IonicPage, NavController, ViewController} from "ionic-angular";
 })
 export class Settings {
 
-    constructor(private nav: NavController, private viewController: ViewController) {
-    }
-
-
-    ionViewWillEnter() {
-        console.debug('ionViewWillEnter');
+    constructor(private viewController: ViewController, private events: Events) {
     }
 
 
     logout() {
+        this.events.publish(CommonConstants.EVENT_LOGOUT);
         this.viewController.dismiss();
     }
 

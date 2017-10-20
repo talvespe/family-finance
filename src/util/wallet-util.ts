@@ -15,9 +15,9 @@ export class WalletUtil {
     public static getWalletBalance(wallet: Wallet) {
         let total: number = 0;
 
-        for (let entry of wallet.entries) {
-            total = total + entry.value;
-        }
+        // for (let entry of wallet.entries) {
+        //     total = total + entry.value;
+        // }
 
         return total;
     }

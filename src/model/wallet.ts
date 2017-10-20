@@ -1,7 +1,5 @@
-import {Entry} from "./entry";
-
 export interface Wallet {
-    entries: Array<Entry>;
+    id: string;
     month: number;
     year: number;
 }
