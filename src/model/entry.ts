@@ -6,10 +6,8 @@ import {Wallet} from "./wallet";
 export interface Entry {
     date: Date;
     value: number;
-    plus:boolean;
     name: string;
     category: Category;
     entryFixed: EntryFixed;
     user: User;
-    wallet:Wallet;
 }

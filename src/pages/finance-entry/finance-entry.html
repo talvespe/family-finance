@@ -12,12 +12,12 @@
 <ion-content no-padding>
     <ion-list>
         <ion-item class="valor" [color]="plus ? 'success' : 'danger'">
-            <ion-input type="number" item-end color="light" placeholder="00.00" text-right></ion-input>
+            <ion-input [(ngModel)]="entry.value" type="number" item-end color="light" placeholder="00.00" text-right></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label static>Nome</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="entry.name" type="text"></ion-input>
         </ion-item>
 
         <ion-item>

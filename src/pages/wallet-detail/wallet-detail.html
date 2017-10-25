@@ -6,32 +6,36 @@
             </button>
         </ion-buttons>
 
-        <ion-segment  color="secondary">
-            <ion-segment-button>
-                NOV
-            </ion-segment-button>
-
-            <ion-segment-button>
-                SET
-            </ion-segment-button>
-
-            <ion-segment-button >
-                OUT
+        <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)" color="secondary">
+            <ion-segment-button *ngFor="let wallet of wallets" value="{{wallet.month}}">
+                {{getMonth(wallet.month)}} {{wallet.year}}
             </ion-segment-button>
         </ion-segment>
     </ion-toolbar>
 
-    <ion-slides>
-        <ion-slide>
-            <h1>SETEMBRO</h1>
-        </ion-slide>
+    <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged($event)">
+        <ion-slide *ngFor="let wallet of wallets" id="{{wallet.month}}">
+            <ion-list no-padding>
+                <ion-item color="primary" no-padding *ngFor="let entry of wallet.entries">
+                    <ion-grid no-padding>
+                        <ion-row>
+                            <ion-col col-1 text-center>
+                                <!--<ion-icon [name]="entry.category.icon"> </ion-icon>-->
+                                <ion-icon name="home"></ion-icon>
+                            </ion-col>
 
-        <ion-slide>
-            <h1>OUTUBRO</h1>
-        </ion-slide>
+                            <ion-col col-7 text-left>
+                                <p ion-text class="font-100">{{entry.name}}</p>
+                            </ion-col>
 
-        <ion-slide>
-            <h1>NOVEMBRO</h1>
+                            <ion-col col-4 text-right>
+                                <h2 ion-text item-end balance>{{entry.value | currencyFormat }}</h2>
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+
+                </ion-item>
+            </ion-list>
         </ion-slide>
     </ion-slides>
 </ion-content>

@@ -41,7 +41,7 @@
                     </ion-row>
                     <ion-row>
                         <ion-col text-end>
-                            <h2 ion-text *ngIf="currentWallet != null" balance>{{currentWallet | walletBalance | currencyFormat}}</h2>
+                            <h2 ion-text *ngIf="currentWallet != null" balance>{{currentWallet.balance | currencyFormat}}</h2>
                         </ion-col>
                     </ion-row>
                 </ion-grid>

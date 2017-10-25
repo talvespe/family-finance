@@ -14,10 +14,12 @@ export class EntryDirective implements AfterViewInit {
 
     ngAfterViewInit(): void {
         let valueString = this.elRef.nativeElement.innerHTML.replace('R$', '').replace(',', '');
-        if (this.entry.plus) {
+        if (this.entry.value > 0) {
             this.elRef.nativeElement.className = 'success'
-        } else {
+        } else if (this.entry.value < 0) {
             this.elRef.nativeElement.className = 'danger'
+        } else{
+            this.elRef.nativeElement.className = 'info'
         }
     }
 }

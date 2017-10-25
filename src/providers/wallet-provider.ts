@@ -1,18 +1,25 @@
 import {Wallet} from "../model/wallet";
+import {Injectable} from "@angular/core";
+import {AngularFirestore} from "angularfire2/firestore";
 
-export class WalletUtil {
+@Injectable()
+export class WalletProvider {
 
-    public static getBalance(wallet: Wallet, wallets: Array<Wallet>) {
+    constructor(private afs: AngularFirestore) {
+
+    }
+
+    public getBalance(wallet: Wallet, wallets: Array<Wallet>) {
         let total: number = this.getWalletBalance(wallet);
-        let lastWallet: Wallet = WalletUtil.getLastWallet(wallet, wallets);
+        let lastWallet: Wallet = this.getLastWallet(wallet, wallets);
 
         if (lastWallet != null) {
-            total = total + WalletUtil.getBalance(lastWallet, wallets);
+            total = total + this.getBalance(lastWallet, wallets);
         }
         return total;
     }
 
-    public static getWalletBalance(wallet: Wallet) {
+    public getWalletBalance(wallet: Wallet) {
         let total: number = 0;
         // this.userDoc = this.afs.doc<User>("/users/" + user.id);
         // for (let entry of wallet.entries) {
@@ -22,14 +29,14 @@ export class WalletUtil {
         return total;
     }
 
-    public static getCurrentWallet(wallets: Array<Wallet>) {
+    public getCurrentWallet(wallets: Array<Wallet>) {
         let now = new Date();
         return wallets.filter((wallet: Wallet) => {
             return (wallet.year == now.getFullYear() && wallet.month == (now.getMonth() + 1 ));
         })[0];
     }
 
-    public static getLastWallet(wallet: Wallet, wallets: Array<Wallet>) {
+    public getLastWallet(wallet: Wallet, wallets: Array<Wallet>) {
         return wallets.filter((walletFilter) => {
             let mesAnterior: number;
             let anoAnterior: number;

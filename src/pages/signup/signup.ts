@@ -28,7 +28,7 @@ export class Signup {
         administrator: null,
     };
 
-    constructor(public navCtrl: NavController, public afs: AngularFirestore) {
+    constructor(public navCtrl: NavController, public readonly afs: AngularFirestore) {
         this.userCollection = afs.collection<User>('users');
     }
 
@@ -36,7 +36,7 @@ export class Signup {
         let now: Date = new Date();
         let nextWallet: Wallet = {
             id: this.afs.createId(),
-            month: (now.getMonth()+2),
+            month: (now.getMonth() + 2),
             year: now.getFullYear(),
         }
 
@@ -50,7 +50,41 @@ export class Signup {
         this.userCollection.add(this.user).then(user => {
             this.userDoc = this.afs.doc<User>(user.path);
             this.walletsCollection = this.userDoc.collection<Wallet>('wallets');
-            this.walletsCollection.add(nextWallet);
+
+            this.walletsCollection.add(nextWallet).then(wallet => {
+                let walletDoc = this.afs.doc<Wallet>(wallet.path);
+
+
+                let entry: Entry = {
+                    date: new Date(),
+                    value: -10.50,
+                    name: "Arroz",
+                    category: null,
+                    entryFixed: null,
+                    user: null,
+                }
+                let entry2: Entry = {
+                    date: new Date(),
+                    value: -20.50,
+                    name: "Supermecado",
+                    category: null,
+                    entryFixed: null,
+                    user: null,
+                }
+                let entry3: Entry = {
+                    date: new Date(),
+                    value: 1000,
+                    name: "Salário",
+                    category: null,
+                    entryFixed: null,
+                    user: null,
+                }
+
+                walletDoc.collection<Entry>('entries').add(entry);
+                walletDoc.collection<Entry>('entries').add(entry2);
+                walletDoc.collection<Entry>('entries').add(entry3);
+            });
+
             this.walletsCollection.add(currentWallet);
         });
 

@@ -6,7 +6,7 @@ import {User} from "../../model/user";
 import {CommonConstants} from "../../constants/CommonConstants";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
 import {Storage} from "@ionic/storage";
-import {WalletUtil} from "../../util/wallet-util";
+import {Entry} from "../../model/entry";
 
 @IonicPage()
 @Component({
@@ -27,21 +27,34 @@ export class FinanceTrending {
             this.currentUser = user;
             console.log("currentUser = " + this.currentUser.name);
 
-
-            this.userDoc = this.afs.doc<User>("/users/" + user.id);
+            this.userDoc = this.afs.doc<User>(`/users/${user.id}`);
             this.walletsCollection = this.userDoc.collection<Wallet>('wallets');
             this.walletsCollection.snapshotChanges().map(actions => {
                 return actions.map(w => {
                     const wallet = w.payload.doc.data() as Wallet;
-                    const id = w.payload.doc.id;
-                    wallet.id = id;
+                    const walletId = w.payload.doc.id;
+                    wallet.id = walletId;
+                    let walletDoc: AngularFirestoreDocument<Wallet> = this.afs.doc<Wallet>(`/users/${user.id}/wallets/${walletId}`);
+
+                    let total = 0;
+                    walletDoc.collection<Entry>('entries').valueChanges().subscribe(entries => {
+                        console.log(entries);
+                        entries.forEach(entry => {
+                            total = total + entry.value;
+                            console.log(entry);
+
+                        });
+                        wallet.balance = total;
+                        wallet.entries = entries;
+                    });
+
+
                     this.wallets.push(wallet);
                 });
             }).subscribe(wallet => {
                 this.sortWallet();
             });
         });
-
 
     }
 
@@ -72,11 +85,23 @@ export class FinanceTrending {
     }
 
     proccessBalance(wallet: Wallet) {
-        return WalletUtil.getBalance(wallet, this.wallets);
+        const userId = this.currentUser.id;
+        const walletId = wallet.id;
+        let walletDoc: AngularFirestoreDocument<Wallet> = this.afs.doc<Wallet>(`/users/${userId}/wallets/${walletId}`);
+
+        walletDoc.collection<Entry>('entries').valueChanges().subscribe(entry => {
+            console.log(entry);
+        });
+
+        // return WalletUtil.getBalance(wallet, this.wallets);
     }
 
-    walletDetail() {
-        const walletDetailModal = this.modalCtrl.create("WalletDetail");
+    walletDetail(wallet:Wallet) {
+        const walletDetailModal = this.modalCtrl.create("WalletDetail", {
+            currentUser: this.currentUser,
+            wallets: this.wallets,
+            currentWallet: wallet
+        });
         walletDetailModal.present();
     }
 }

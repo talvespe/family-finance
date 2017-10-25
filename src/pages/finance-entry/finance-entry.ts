@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {App, IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
 import {Wallet} from "../../model/wallet";
-import {WalletUtil} from "../../util/wallet-util";
-import {WALLETS} from "../../mock/wallets";
+import {User} from "../../model/user";
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from "angularfire2/firestore";
+import {Entry} from "../../model/entry";
 
 @IonicPage()
 @Component({
@@ -11,17 +12,40 @@ import {WALLETS} from "../../mock/wallets";
 })
 export class FinanceEntry {
 
-
-    wallets: Array<any> = WALLETS;
     currentWallet: Wallet;
-    plus:boolean;
+    currentUser: User;
+    plus: boolean;
+    private entryCollection: AngularFirestoreCollection<Entry>;
 
-    constructor(public navCtrl: NavController, private navParams: NavParams, public viewController: ViewController) {
-        this.currentWallet = WalletUtil.getCurrentWallet(this.wallets);
+
+    entry: Entry = {
+        value: 0,
+        entryFixed: null,
+        category: null,
+        user: this.currentUser,
+        name: '',
+        date: new Date()
+    };
+
+    constructor(public navCtrl: NavController, private navParams: NavParams, public viewController: ViewController, public afs: AngularFirestore) {
         this.plus = this.navParams.get('plus');
+        this.currentUser = navParams.get("currentUser");
+        this.currentWallet = navParams.get("currentWallet");
+
+
+        let walletDoc: AngularFirestoreDocument<Wallet> = this.afs.doc<Wallet>(`/users/${this.currentUser.id}/wallets/${this.currentWallet.id}`);
+        this.entryCollection = walletDoc.collection<Entry>('entries');
     }
 
     save() {
-        this.viewController.dismiss();
+        if (this.plus) {
+            this.entry.value = Math.abs(this.entry.value);
+        } else {
+            this.entry.value = -Math.abs(this.entry.value);
+        }
+
+        this.entryCollection.add(this.entry).then(ref => {
+            this.viewController.dismiss();
+        });
     }
 }

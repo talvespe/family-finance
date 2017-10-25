@@ -9,6 +9,7 @@ import {SuperTabsModule} from "ionic2-super-tabs";
 import {AngularFireModule} from "angularfire2";
 import {AngularFirestoreModule} from "angularfire2/firestore";
 import {IonicStorageModule} from "@ionic/storage";
+import {WalletProvider} from "../providers/wallet-provider";
 
 export const firebaseConfig = {
     apiKey: "AIzaSyBCKamko-cfc4m_fGSnXaK8iUanGJFDb9M",
@@ -27,8 +28,8 @@ export const firebaseConfig = {
         BrowserModule,
         IonicModule.forRoot(MyApp),
         SuperTabsModule.forRoot(),
-        AngularFirestoreModule,
         AngularFireModule.initializeApp(firebaseConfig),
+        AngularFirestoreModule.enablePersistence(),
         IonicStorageModule.forRoot()
     ],
     bootstrap: [IonicApp],
@@ -38,6 +39,7 @@ export const firebaseConfig = {
     providers: [
         StatusBar,
         SplashScreen,
+        WalletProvider,
         {provide: ErrorHandler, useClass: IonicErrorHandler}
     ]
 })
