@@ -19,10 +19,9 @@ export class FinanceEntry {
 
 
     entry: Entry = {
-        value: 0,
+        value: null,
         entryFixed: null,
         category: null,
-        user: this.currentUser,
         name: '',
         date: new Date()
     };
@@ -32,9 +31,15 @@ export class FinanceEntry {
         this.currentUser = navParams.get("currentUser");
         this.currentWallet = navParams.get("currentWallet");
 
+        console.log("user > " +JSON.stringify(this.currentUser));
+        console.log("entry > " +JSON.stringify(this.currentWallet));
+
 
         let walletDoc: AngularFirestoreDocument<Wallet> = this.afs.doc<Wallet>(`/users/${this.currentUser.id}/wallets/${this.currentWallet.id}`);
         this.entryCollection = walletDoc.collection<Entry>('entries');
+        this.entryCollection.valueChanges().subscribe(entries =>{
+           console.log(entries);
+        });
     }
 
     save() {
@@ -43,7 +48,7 @@ export class FinanceEntry {
         } else {
             this.entry.value = -Math.abs(this.entry.value);
         }
-
+        console.log( this.entry);
         this.entryCollection.add(this.entry).then(ref => {
             this.viewController.dismiss();
         });

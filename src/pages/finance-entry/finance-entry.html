@@ -51,7 +51,7 @@
 
         <ion-item  *ngIf="!fixo">
             <ion-label>Data</ion-label>
-            <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A"></ion-datetime>
+            <ion-datetime [(ngModel)]="entry.date" displayFormat="MM/YYYY" pickerFormat="MM YYYY"></ion-datetime>
         </ion-item>
     </ion-list>
 

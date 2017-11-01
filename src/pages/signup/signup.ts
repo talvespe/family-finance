@@ -61,7 +61,6 @@ export class Signup {
                     name: "Arroz",
                     category: null,
                     entryFixed: null,
-                    user: null,
                 }
                 let entry2: Entry = {
                     date: new Date(),
@@ -69,7 +68,6 @@ export class Signup {
                     name: "Supermecado",
                     category: null,
                     entryFixed: null,
-                    user: null,
                 }
                 let entry3: Entry = {
                     date: new Date(),
@@ -77,7 +75,6 @@ export class Signup {
                     name: "Salário",
                     category: null,
                     entryFixed: null,
-                    user: null,
                 }
 
                 walletDoc.collection<Entry>('entries').add(entry);

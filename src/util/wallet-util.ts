@@ -3,22 +3,11 @@ import {Wallet} from "../model/wallet";
 export class WalletUtil {
 
     public static getBalance(wallet: Wallet, wallets: Array<Wallet>) {
-        let total: number = this.getWalletBalance(wallet);
+        let total: number = wallet.balance;
         let lastWallet: Wallet = WalletUtil.getLastWallet(wallet, wallets);
-
-        if (lastWallet != null) {
+        if (lastWallet != null && lastWallet.id != wallet.id) {
             total = total + WalletUtil.getBalance(lastWallet, wallets);
         }
-        return total;
-    }
-
-    public static getWalletBalance(wallet: Wallet) {
-        let total: number = 0;
-        // this.userDoc = this.afs.doc<User>("/users/" + user.id);
-        // for (let entry of wallet.entries) {
-        //     total = total + entry.value;
-        // }
-
         return total;
     }
 
